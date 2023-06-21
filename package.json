@@ -10,7 +10,7 @@
     "build:esm": "tsc -p ./tsconfig.esm.json",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "prepack": "npm run build",
-    "dev": "nodemon ./src/index.ts react",
+    "dev": "nodemon ./src/index.ts @wangeditor/editor@5.1.23 -a",
     "test": "mocha"
   },
   "files": [
@@ -27,6 +27,10 @@
         "default": "./lib/cjs/index.js"
       }
     }
+  },
+  "nodemonConfig":{
+    "ignore": ["temp"],
+    "watch":["src/*"]
   },
   "repository": {
     "type": "git",
@@ -47,10 +51,15 @@
     "mocha": "^10.2.0",
     "nodemon": "^2.0.22",
     "rimraf": "^5.0.1",
+    "semantic-release": "^21.0.5",
     "ts-node": "^10.9.1",
     "typescript": "^5.1.3"
   },
   "dependencies": {
     "commander": "^11.0.0"
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
   }
 }
