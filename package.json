@@ -1,6 +1,6 @@
 {
   "name": "node-package-offline-downloader",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "node package offline installation package downloader",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
@@ -10,7 +10,7 @@
     "build:esm": "tsc -p ./tsconfig.esm.json",
     "build:cjs": "tsc -p ./tsconfig.cjs.json",
     "prepack": "npm run build",
-    "dev": "nodemon ./src/index.ts @wangeditor/editor@5.1.23 -a",
+    "dev": "nodemon ./src/index.ts @wangeditor/editor@5.1.23",
     "test": "mocha"
   },
   "bin": {
