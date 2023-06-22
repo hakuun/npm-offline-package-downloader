@@ -55,7 +55,7 @@ async function downloadPackages(
 			// 4.2 打包依赖到指定目录
 			await asyncExec(`npm pack ${packagePath}`, { cwd: outputPath });
 
-			// if (options.all) {
+			if (options.all) {
 			// 	// 获取依赖的 package.json 文件
 			// 	const packageJson = fs.readFileSync(
 			// 		path.resolve(`${packagePath}/package.json`),
@@ -70,7 +70,8 @@ async function downloadPackages(
 			// 		const value = dependencies[key];
 			// 		return `${key}@${value}`;
 			// 	});
-			// }
+			}
+
 			// 5. 删除临时目录
 			deleteDirectory(tempPath);
 		} catch (error) {

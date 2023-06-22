@@ -1,7 +1,7 @@
 {
-  "name": "npm-offline-package-downloader",
+  "name": "node-package-offline-downloader",
   "version": "0.0.1",
-  "description": "npm offline installation package downloader",
+  "description": "node package offline installation package downloader",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
   "scripts": {
@@ -12,6 +12,9 @@
     "prepack": "npm run build",
     "dev": "nodemon ./src/index.ts @wangeditor/editor@5.1.23 -a",
     "test": "mocha"
+  },
+  "bin": {
+    "npod":"/lib/cjs/index.js"
   },
   "files": [
     "lib/**/*"
@@ -29,20 +32,19 @@
     }
   },
   "nodemonConfig":{
-    "ignore": ["temp"],
     "watch":["src/*"]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hakuun/npm-offline-package-downloader.git"
+    "url": "git+https://github.com/hakuun/node-package-offline-downloader.git"
   },
   "keywords": [],
   "author": "hakuun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hakuun/npm-offline-package-downloader/issues"
+    "url": "https://github.com/hakuun/node-package-offline-downloader.git/issues"
   },
-  "homepage": "https://github.com/hakuun/npm-offline-package-downloader#readme",
+  "homepage": "https://github.com/hakuun/node-package-offline-downloader.git#readme",
   "devDependencies": {
     "@types/chai": "^4.3.5",
     "@types/commander": "^2.12.2",
