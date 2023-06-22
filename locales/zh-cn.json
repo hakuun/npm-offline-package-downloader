@@ -1,0 +1,10 @@
+{
+	"Empty": "",
+	"Packages name": "依赖包名称",
+	"Download dependencies for dependencies": "下载依赖包的依赖",
+	"Set download address": "设置下载地址",
+	"Being prepared for download": "准备下载",
+	"Downloading": "正在下载",
+	"Download completed": "下载完成",
+	"Switch language": "切换语言"
+}

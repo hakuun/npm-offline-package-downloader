@@ -4,23 +4,38 @@ import path from "path";
 import fs from "fs";
 import { program, OptionValues } from "commander";
 import { exec, ExecOptions } from "child_process";
+import { I18n } from "i18n";
+
+const i18n = new I18n({
+  locales: ["en", "zh-cn"],
+  directory: path.resolve("locales")
+});
+
 
 interface AsyncExecOptions extends ExecOptions {
   showMessage?: Boolean;
 }
 
+
 program
   .name("npod")
   .usage("<packages name...> [options]")
-  .argument("<packages name...>", "依赖包名称")
-  .option("-a, --all", "下载依赖项的所有依赖")
-  .option("-o, --output <path>", "指定下载路径", "./");
+  .argument("<packages name...>", i18n.__("Packages name"))
+  .option("-a, --all", i18n.__("Download dependencies for dependencies"))
+  .option("-o, --output <path>", i18n.__("Set download address"), "./")
+  .option("-lang, --language <language>", i18n.__("Switch language"), (value) => {
+    const locales = ["en", "zh-cn"];
+    if(locales.includes(value)) return value;
+    return 'en'
+  }, 'en');
 
 program.parse();
 
 const options = program.opts();
 
-console.log("即将下载", program.args, '\n');
+i18n.setLocale(options.language);
+
+console.log(i18n.__("Being prepared for download"), program.args, "\n");
 
 downloadPackages(program.args, options);
 
@@ -30,7 +45,7 @@ async function downloadPackages(
 ) {
   for (let i = 0; i < packages.length; i++) {
     const packageName = packages[i];
-    console.log(`正在下载 ${packageName}... \n`);
+    console.log(i18n.__("Downloading"), packageName, "\n");
     try {
       // 1. 生成临时文件夹
       const outputPath = path.resolve(options.output);
@@ -42,7 +57,7 @@ async function downloadPackages(
       // 3. 安装 package
       await asyncExec(`npm install ${packageName}`, {
         cwd: tempPath,
-        showMessage: true,
+        showMessage: true
       });
 
       // 4. 运行 npm pack 命令打包依赖
@@ -55,7 +70,7 @@ async function downloadPackages(
       );
       // 4.2 打包依赖到指定目录
       await asyncExec(`npm pack ${packagePath}`, { cwd: outputPath });
-	// 4.3 下载该依赖项的所以依赖
+      // 4.3 下载该依赖项的所以依赖
       if (options.all) {
         // 获取依赖的 package.json 文件
         const packageJson = fs.readFileSync(
@@ -74,11 +89,10 @@ async function downloadPackages(
 
       // 5. 删除临时目录
       deleteDirectory(tempPath);
-
     } catch (error) {
       throw error;
     }
-    console.log(`下载 ${packageName} 完成 \n`);
+    console.log(packageName, i18n.__("Download completed"), "\n\n");
   }
 }
 
