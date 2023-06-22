@@ -34,7 +34,7 @@ Set download address
 ```sh
 npod @antv/g6 -o ./tgz
 
-npod @antv/g6 --outpath ./tgz
+npod @antv/g6 --output ./tgz
 ```
 
 Download dependencies for dependencies

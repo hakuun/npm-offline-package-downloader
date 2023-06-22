@@ -34,7 +34,7 @@ npod vue react@^18.0.2 angular@~16.1.2 commander@latest
 ```sh
 npod @antv/g6 -o ./tgz
 
-npod @antv/g6 --outpath ./tgz
+npod @antv/g6 --output ./tgz
 ```
 
 下载依赖的依赖
