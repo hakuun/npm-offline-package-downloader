@@ -38,7 +38,7 @@
     "type": "git",
     "url": "git+https://github.com/hakuun/node-package-offline-downloader.git"
   },
-  "keywords": [],
+  "keywords": ["npm", "offline", "downloader"],
   "author": "hakuun",
   "license": "ISC",
   "bugs": {
