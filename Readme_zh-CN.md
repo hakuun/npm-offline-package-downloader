@@ -1,43 +1,43 @@
 # node-package-offline-downloader
 
-## node package offline installation package downloader
+## npm 离线包下载器
 
 [![NPM Version](http://img.shields.io/npm/v/node-package-offline-downloader.svg?style=flat)](https://www.npmjs.org/package/node-package-offline-downloader)
 [![NPM Downloads](https://img.shields.io/npm/dm/node-package-offline-downloader.svg?style=flat)](https://npmcharts.com/compare/node-package-offline-downloader?minimal=true)
 [![install size](https://packagephobia.com/badge?p=node-package-offline-downloader)](https://packagephobia.com/result?p=node-package-offline-downloader)
 
-Read this in other languages: English | [简体中文](./Readme_zh-CN.md)
+使用其他语言阅读：[English](./Readme.md) | 简体中文
 
-## Installation
+## 安装
 
 ```sh
 npm install node-package-offline-downloader -g
 ```
 
-## Quick Start
+## 快速开始
 
 ```sh
 npod <packages name...> [options]
 ```
 
-Download individual dependencies
+下载单个
 ```sh
 npod react
 ```
 
-Download multiple dependencies
+下载多个
 ```sh
 npod vue react@^18.0.2 angular@~16.1.2 commander@latest
 ```
 
-Set download address
+指定下载地址
 ```sh
 npod @antv/g6 -o ./tgz
 
 npod @antv/g6 --outpath ./tgz
 ```
 
-Download dependencies for dependencies
+下载依赖的依赖
 ```sh
 npod vue -a
 
