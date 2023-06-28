@@ -1,6 +1,6 @@
 {
   "name": "node-package-offline-downloader",
-  "version": "0.0.5",
+  "version": "1.0.0",
   "description": "node package offline installation package downloader",
   "types": "./lib/cjs/types/index.d.ts",
   "main": "./lib/cjs/index.js",
