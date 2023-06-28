@@ -6,7 +6,7 @@
 [![NPM Downloads](https://img.shields.io/npm/dm/node-package-offline-downloader.svg?style=flat)](https://npmcharts.com/compare/node-package-offline-downloader?minimal=true)
 [![install size](https://packagephobia.com/badge?p=node-package-offline-downloader)](https://packagephobia.com/result?p=node-package-offline-downloader)
 
-使用其他语言阅读：[English](./Readme.md) | 简体中文
+使用其他语言阅读：[English](./README.md) | 简体中文
 
 ## 安装
 
